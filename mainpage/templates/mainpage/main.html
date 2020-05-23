@@ -26,6 +26,8 @@
       <h1>About</h1>
       <h6>Myself</h6>
     </div>
+    
+    <a class="nav-link" href="{% static 'files/resume.pdf' %}"><p>View My Resume</p></a>
   </section>
 
   <section>
@@ -56,6 +58,17 @@
       <h1>Portfolio</h1>
       <h6>View some of my recent work</h6>
     </div>
+    <div>
+      {% for project in projects %}
+        <div class="card" style="width: 18rem;">
+          <a href='{{ project.project_link}}'><img class="card-img-top" src="{{ project.project_image.url }}" alt="Card image cap"></a>
+          <div class="card-body">
+            <h5 class="card-title">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
   </section>
 
   <section>
@@ -71,9 +84,6 @@
       <h6>Let's work together</h6>
     </div>
   </section>
-
- 
-
 
   {% bootstrap_javascript jquery='full' %}
 </body>
