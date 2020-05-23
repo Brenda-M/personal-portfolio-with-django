@@ -1,5 +1,6 @@
 {# Load the tag library #}
 {% load bootstrap4 %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,11 +8,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/main.css' %}">
 
   <title>Brenda Muthoni - Software Developer </title>
 </head>
 <body>
-  
+  <header>
+    <div class="landing-text">
+      <h1>Brenda Muthoni</h1>
+      <h6>Web Developer and UI | UX Designer </h6>
+    </div>
+  </header>
+
 
   {% bootstrap_javascript jquery='full' %}
 </body>
