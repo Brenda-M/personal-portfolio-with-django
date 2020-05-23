@@ -1,5 +1,6 @@
 {% extends 'mainpage/base.html' %}
 {% load static %}
+{% load bootstrap4 %}
 
 {% block content %}
 
@@ -133,16 +134,19 @@
 </section>
 
 
+
+
 <section>
   <div class="section-heading">
     <h1>Contact</h1>
     <h6>Let's work together</h6>
   </div>
-  <div class="contact-form">
+  <div class="container contact-form">
     <form action="" method="POST">
       {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit" class="btn btn-primary">Submit</button>
+      {% bootstrap_form form layout='inline' %}
+  
+      <button type="submit" class="btn btn-primary" >Submit</button>
     </form>
   </div>
 </section>

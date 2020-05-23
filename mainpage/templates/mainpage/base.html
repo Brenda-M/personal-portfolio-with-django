@@ -25,6 +25,19 @@
 <body>
   {% include "mainpage/partials/_header.html" %}
 
+  <div id="message-container">
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %}
+      <li class="alert alert-{{ message.level_tag }}" role="alert">{{ message.message }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  
+  </div>
+
+
+
   {% block content %}{%endblock%}
 
   {% block scripts %}
