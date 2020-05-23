@@ -1,5 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from .models import Project
+
 
 def home(request):
-  return HttpResponse ('<h1>Professional landing page</h1>')
+
+  projects = Project.objects.all()
+
+  return render(request, 'mainpage/main.html', {'projects': projects})
