@@ -3,67 +3,147 @@
 
 {% block content %}
 
-  <section>
-    <div class="about-heading">
-      <h1>About</h1>
-      <h6>Myself</h6>
+<section class="about" id="about">
+  <div class="container">
+    <div class="profile-img">
+      <img src="{% static 'img/profile1.jpg'%}" alt="">
     </div>
-    
-    <a class="nav-link" href="{% static 'files/resume.pdf' %}"><p>View My Resume</p></a>
-  </section>
+    <div class="about-details">
+      <div class="about-heading">
+        <h1>About</h1>
+        <h6>Myself</h6>
+      </div>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      </p>
+      <div class="social-media">
+        <ul class="nav-list">
+          <li>
+            <a href="#" class="icom-link">
+              <i class="fab fa-facebook-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="icom-link">
+              <i class="fab fa-twitter-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="icom-link">
+              <i class="fab fa-github-square"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="icom-link">
+              <i class="fab fa-linkedin"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <section>
-    <div class="about-heading">
-      <h1>Skills</h1>
-      <h6>What i am good at</h6>
-    </div>
-    <div class="language-icons">
-      <div  class="devicon-html5-plain  col-xs-15"><span>HTML</span></div>
-      <i class="devicon-angularjs-plain colored"></i>
-      <i class="devicon-django-plain-wordmark colored"></i>
-      <i class="devicon-html5-plain colored"></i>
-      <i class="devicon-javascript-plain colored"></i>
-      <i class="devicon-python-plain colored"></i>
-      <i class="devicon-css3-plain colored"></i>
-    </div>
-  </section>
-    
-  <section>
+
+<section>
+  <div class="section-heading">
+    <h1>Skills</h1>
+    <h6>What i am good at</h6>
+  </div>
+  <div class="language-icons">
+    <div class="devicon-html5-plain  col-xs-15"><span>HTML</span></div>
+    <i class="devicon-angularjs-plain colored"></i>
+    <i class="devicon-django-plain-wordmark colored"></i>
+    <i class="devicon-html5-plain colored"></i>
+    <i class="devicon-javascript-plain colored"></i>
+    <i class="devicon-python-plain colored"></i>
+    <i class="devicon-css3-plain colored"></i>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
     <div class="section-heading">
       <h1>Services</h1>
       <h6>What I can do for you</h6>
     </div>
-  </section>
-
-  <section>
-    <div class="section-heading">
-      <h1>Portfolio</h1>
-      <h6>View some of my recent work</h6>
-    </div>
-    <div>
-      {% for project in projects %}
-        <div class="card" style="width: 18rem;">
-          <a href='{{ project.project_link}}'><img class="card-img-top" src="{{ project.project_image.url }}" alt="Card image cap"></a>
-          <div class="card-body">
-            <h5 class="card-title">{{ project.title }}</h5>
-            <p class="card-text">{{ project.description }}</p>
-          </div>
+    <div class="my-skills">
+      <div class="skill">
+        <div class="icon-container" id="designImage">
+          <i class="fas fa-layer-group" style="font-size: 150px;"></i>
         </div>
-      {% endfor %}
-    </div>
-  </section>
+        <div id="designDescription">
+          <h1>Web Design</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          </p>
+        </div>
+      </div>
 
-  <section>
-    <div class="section-heading">
-      <h1>Work Experience</h1>
-      <h6>Past and Current Jobs</h6>
-    </div>
-  </section>
+      <div class="skill">
+        <div class="icon-container" id="developmentImage">
+          <i class="fas fa-code" style="font-size: 150px;"></i>
+        </div>
+        <div id="developmentDescription">
+          <h1>Web Development</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          </p>
+        </div>
+      </div>
 
-  <section>
-    <div class="section-heading">
-      <h1>Contact</h1>
-      <h6>Let's work together</h6>
+      <div class="skill">
+        <div class="icon-container" id="productImage">
+          <i class="fas fa-chart-bar" style="font-size: 150px;"></i>
+        </div>
+        <div id="productDescripton">
+          <h1>Product Strategy</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+          </p>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<section>
+  <div class="section-heading">
+    <h1>Portfolio</h1>
+    <h6>View some of my recent work</h6>
+  </div>
+  <div>
+    {% for project in projects %}
+    <div class="card" style="width: 18rem;">
+      <a href='{{ project.project_link}}'><img class="card-img-top" src="{{ project.project_image.url }}"
+          alt="Card image cap"></a>
+      <div class="card-body">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <p class="card-text">{{ project.description }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+
+<section>
+  <div class="section-heading">
+    <h1>Contact</h1>
+    <h6>Let's work together</h6>
+  </div>
+  <div class="contact-form">
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</section>
 {% endblock %}
