@@ -1,16 +1,8 @@
-# from django.core.mail import send_mail, get_connection
+from django import forms
 
-# from django.forms.widgets import TextInput
+class ContactForm(forms.Form):
+  name = forms.CharField(max_length=250, label="Name")
+  email = forms.EmailField(max_length=250, label="Email")
+  message = forms.CharField(label="", widget=forms.Textarea(attrs={'placeholder': 'Enter your message here'}))
 
-# from django import forms
-
-# class ContactForm(forms.Form):
-#    name = forms.CharField(label='sr-only', widget=forms.TextInput(
-#    attrs={'placeholder': 'Name', 'class': 'form-control', 'id':'c_name'}))
-
-#    email = forms.EmailField(label='sr-only', widget=forms.TextInput(
-#    attrs={'placeholder': 'E-mail', 'class': 'form-control', 'id':'c_email'}),
-#    required=False)
-
-#    message = forms.CharField(label='sr-only', widget=forms.TextInput(
-#    attrs={'placeholder': 'Message', 'class': 'form-control', 'id':'c_message'}))
+  
