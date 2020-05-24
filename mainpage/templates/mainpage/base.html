@@ -6,7 +6,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"	
   integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet"> 
@@ -40,9 +40,18 @@
 
   {% block content %}{%endblock%}
 
+  {% include "mainpage/partials/_footer.html" %}
+
+  
+
+
   {% block scripts %}
+    <script>
+      AOS.init();
+    </script>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    <script src="../../../static/js/main.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    {% bootstrap_javascript jquery='full' %}
   {% endblock %}
 </body>

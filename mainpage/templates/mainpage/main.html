@@ -6,10 +6,10 @@
 
 <section class="about" id="about">
   <div class="container">
-    <div class="profile-img">
+    <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
       <img src="{% static 'img/profile1.jpg'%}" alt="">
     </div>
-    <div class="about-details">
+    <div class="about-details" data-aos="fade-left" data-aos-delat="600">
       <div class="about-heading">
         <h1>About</h1>
         <h6>Myself</h6>
@@ -49,19 +49,21 @@
 </section>
 
 
-<section>
-  <div class="section-heading">
-    <h1>Skills</h1>
-    <h6>What i am good at</h6>
-  </div>
-  <div class="language-icons">
-    <div class="devicon-html5-plain  col-xs-15"><span>HTML</span></div>
-    <i class="devicon-angularjs-plain colored"></i>
-    <i class="devicon-django-plain-wordmark colored"></i>
-    <i class="devicon-html5-plain colored"></i>
-    <i class="devicon-javascript-plain colored"></i>
-    <i class="devicon-python-plain colored"></i>
-    <i class="devicon-css3-plain colored"></i>
+<section class="skills" id="skills">
+  <div class="container">
+    <div class="section-heading">
+      <h1>Skills</h1>
+      <h6>What i am good at</h6>
+    </div>
+    <div class="language-icons" data-aos="fade-up" data-aos-delay="300">
+      <div class="devicon-angularjs-plain colored "><span>angular</span></div>
+      <div class="devicon-django-plain-wordmark colored c"><span>django</span></div>
+      <div class="devicon-html5-plain colored"><span>html</span></div>
+      <div class="devicon-javascript-plain colored"><span>javascript</span></div>
+      <div class="devicon-python-plain colored"><span>python</span></div>
+      <div class="devicon-css3-plain colored"><span>css3</span></div>
+
+    </div>
   </div>
 </section>
 
@@ -71,11 +73,15 @@
       <h1>Services</h1>
       <h6>What I can do for you</h6>
     </div>
-    <div class="my-skills">
-      <div class="skill">
-        <div class="icon-container" id="designImage">
-          <i class="fas fa-layer-group" style="font-size: 150px;"></i>
+    <div class="my-services">
+      <div class="skill" data-aos="fade-in" data-aos-delay="300">
+        <div id="designImage">
+          <div class="icon-container">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h2>Web Design</h2>
         </div>
+
         <div id="designDescription">
           <h1>Web Design</h1>
           <p>
@@ -85,9 +91,12 @@
         </div>
       </div>
 
-      <div class="skill">
-        <div class="icon-container" id="developmentImage">
-          <i class="fas fa-code" style="font-size: 150px;"></i>
+      <div class="skill" data-aos="fade-in" data-aos-delay="600">
+        <div id="developmentImage">
+          <div class="icon-container">
+            <i class="fas fa-code"></i>
+          </div>
+          <h2>Web Development</h2>
         </div>
         <div id="developmentDescription">
           <h1>Web Development</h1>
@@ -98,9 +107,12 @@
         </div>
       </div>
 
-      <div class="skill">
-        <div class="icon-container" id="productImage">
-          <i class="fas fa-chart-bar" style="font-size: 150px;"></i>
+      <div class="skill" data-aos="fade-in" data-aos-delay="900">
+        <div id="productImage">
+          <div class="icon-container">
+            <i class="fas fa-chart-bar"></i>
+          </div>
+          <h2>Product Strategy</h2>
         </div>
         <div id="productDescripton">
           <h1>Product Strategy</h1>
@@ -114,40 +126,41 @@
   </div>
 </section>
 
-<section>
-  <div class="section-heading">
-    <h1>Portfolio</h1>
-    <h6>View some of my recent work</h6>
-  </div>
-  <div>
-    {% for project in projects %}
-    <div class="card" style="width: 18rem;">
-      <a href='{{ project.project_link}}'><img class="card-img-top" src="{{ project.project_image.url }}"
-          alt="Card image cap"></a>
-      <div class="card-body">
-        <h5 class="card-title">{{ project.title }}</h5>
-        <p class="card-text">{{ project.description }}</p>
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="section-heading">
+      <h1>Portfolio</h1>
+      <h6>View some of my recent work</h6>
+    </div>
+    <div>
+      <div class="portfolio-item">
+        {% for project in projects %}
+        <div class="portfolio-img has-margin-right">
+          <a href='{{ project.project_link}}'><img class="card-img-top" src="{{ project.project_image.url }}"
+              alt="Card image cap"></a>
+        </div>
+        <div class="portfolio-description">
+          <h1>{{ project.title }}</h1>
+          <p>{{ project.description }}</p>
+          <a href="{{ project.project_link}}">View Details</a>
+        </div>
+        {% endfor %}
       </div>
     </div>
-    {% endfor %}
   </div>
 </section>
 
 
-
-
-<section>
-  <div class="section-heading">
-    <h1>Contact</h1>
-    <h6>Let's work together</h6>
-  </div>
-  <div class="container contact-form">
-    <form action="" method="POST">
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <h1>Contact</h1>
+      <h6>Let's work together</h6>
+    </div>
+    <form action="" method="POST" data-aos="fade-up" data-aos-delay="300">
       {% csrf_token %}
       {% bootstrap_form form layout='inline' %}
-  
-      <button type="submit" class="btn btn-primary" >Submit</button>
+      <input type="submit" value="submit">
     </form>
-  </div>
 </section>
 {% endblock %}

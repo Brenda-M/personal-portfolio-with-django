@@ -4,6 +4,12 @@ $(document).ready(function () {
     $('.top-nav').toggleClass('open');
   });
 
+
+  $('.top-nav .nav-link').on('click', function(){
+    $('.menu-toggler').removeClass('open');
+    $('.top-nav').removeClass('open');
+  });
+
   $("#designDescription").hide();
   $("#developmentDescription").hide();
   $("#productDescripton").hide();
@@ -39,6 +45,11 @@ $(document).ready(function () {
   });
 
 
+  AOS.init({
+    easing: 'ease',
+    duration: 1800,
+    once: true
+  });
 
 });
 
