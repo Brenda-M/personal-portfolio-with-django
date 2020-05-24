@@ -13,6 +13,7 @@ class Project(models.Model):
   description = models.CharField(max_length=250)
   project_image = models.ImageField(upload_to = 'projects/', blank=True)
   project_link = models.URLField(max_length=250, blank=True)
+  github_link = models.URLField(max_length=250, blank=True)
   pub_date = models.DateTimeField(auto_now_add=True)
   tag = models.ManyToManyField(Tag)
 
