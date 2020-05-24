@@ -21,7 +21,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    config('ALLOWED_HOSTS', cast=Csv())
+    config('ALLOWED_HOSTS')
 ]
 
 
