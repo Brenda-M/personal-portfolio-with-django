@@ -19,7 +19,7 @@ SECRET_KEY = '0$6%v$_7rcdu=18!bxguystup7@08ou96lt6^1n%ar9wgd=rr!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     config('ALLOWED_HOSTS'),
@@ -88,18 +88,10 @@ DATABASES = {
         'TEST': {
             'NAME': 'test_<app_name>'
         },
-        'USER': 'postgres',
-        'PASSWORD':'Bm19952810'
+
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'portfolio',
-#         'USER': 'postgres',
-#         'PASSWORD': 'Bm19952810'
-#     }
-# }
+
 
 
 
