@@ -88,7 +88,8 @@ DATABASES = {
         'TEST': {
             'NAME': 'test_<app_name>'
         },
-
+        'USER': 'postgres',
+        'PASSWORD':'Bm19952810'
     }
 }
 
