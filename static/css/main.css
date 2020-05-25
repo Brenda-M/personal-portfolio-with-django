@@ -33,6 +33,10 @@ img{
   width: 100%;
 }
 
+.hidden{
+  display: none;
+}
+
 /* Reusable styles */
 .container{
   width: 90%;
@@ -44,7 +48,7 @@ img{
 
 .section-heading{
   text-align: center;
-  margin-top: 10rem;
+  /* margin-top: 5rem; */
 }
 
 .section-heading h1{
@@ -54,6 +58,8 @@ img{
   font-weight: 300;
   position: relative;
   margin-bottom: 1rem;
+  padding-top: 40px;
+  
 }
 
 .section-heading h1::before,
@@ -84,6 +90,8 @@ img{
 .section-heading h6{
   font-size: 1.6rem;
   font-weight: 300;
+  color: black;
+  
 }
 
 .has-margin-right{
@@ -221,6 +229,7 @@ li{
   align-items: center;
   justify-content: center;
   font-family: 'Acme', sans-serif;
+  margin-bottom: 8rem;
 }
 
 .about-heading{
@@ -264,15 +273,19 @@ li{
   transition: color 650ms;
 }
 
-.fa-facebook-square:hover{
-  color: #4276b2;
+.fa-instagram{
+  color: #C13584;
 }
 
-.fa-twitter-square:hover{
+.fa-linkedin{
+  color: #0e76a8;
+}
+
+.fa-twitter-square{
   color: #38a1f3;
 }
 
-.fa-github-square:hover{
+.fa-github-square{
   color: #24292e;
 }
 
@@ -361,8 +374,8 @@ div[class^="devicon"] span{
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  margin-bottom: 5em;
   margin-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .portfolio-card{
@@ -402,6 +415,19 @@ div[class^="devicon"] span{
 }
 
 /* contact section */
+.contact{
+  background-color: #221e3f;
+  padding-bottom: 8rem;
+}
+
+.contact h1{
+  color: #ffffff;
+}
+
+.contact h6{
+  color: #ffffff;
+}
+
 ::placeholder{
   font-size: 1.8rem;
 }
@@ -409,6 +435,17 @@ div[class^="devicon"] span{
 form{
   width: 70%;
   margin: 0 auto;
+  padding-top: 5rem;
+}
+
+input[type="text"]{
+  height: 4rem;
+  font-size:20px;
+}
+
+input[type="email"]{
+  height: 4rem;
+  font-size:20px;
 }
 
 input, select, textarea{
@@ -441,10 +478,10 @@ input[type="submit"]:hover{
   width: 100%;
   text-align: center;
   background-color: #16162d;
-  padding: 2rem 0;
+  padding: 4rem 0;
   position: relative;
   color: white;
-  font-size: 1.3rem;
+ 
 }
 
 .up{
@@ -467,7 +504,7 @@ input[type="submit"]:hover{
 }
 
 .copyright p{
-  font-size: 1.4rem;
+  font-size: 1.8rem;
 }
 
 /* animations */

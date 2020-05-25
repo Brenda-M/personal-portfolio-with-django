@@ -17,6 +17,9 @@ class Project(models.Model):
   pub_date = models.DateTimeField(auto_now_add=True)
   tag = models.ManyToManyField(Tag)
 
+  def save_projects(self):
+    self.save()
+
 
   def __str__(self):
     return self.title
