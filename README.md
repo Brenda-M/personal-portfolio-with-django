@@ -20,15 +20,13 @@ This is an evidentiary website that displays samples of my work, details about m
 </ul>
 
 ## Setup/Installation Requirements
-<ol>
-  <li>Open your terminal </li>
-  <li>Clone the repository by running `git clone https://github.com/Brenda-M/personal-portfolio-with-django.git` on your terminal</li>
-  <li>Navigate base directory of the project.</li>
-  <li>Create a virtual environment using `python -m venv <name-of-environment`</li>
-  <li>Activate your virtual environment by running `source venv\Scripts\activate` on Windows or  `source venv/bin/activate` on Linux systems</li>
-  <li>Install the requirements for the project. `pip install -r requirements.txt`</li>
-  <li>Run the application using the command `python manage.py runserver`</li>
-<ol>
+1. Open your terminal.
+2. Clone the repository by running `git clone https://github.com/Brenda-M/personal-portfolio-with-django.git` on your terminal.
+3. Navigate base directory of the project.
+4. Create a virtual environment using `python -m venv <name-of-environment`.
+5. Activate your virtual environment by running `source venv\Scripts\activate` on Windows or  `source venv/bin/activate` on Linux systems.
+6. Install the requirements for the project. `pip install -r requirements.txt`.
+7. Run the application using the command `python manage.py runserver`.
 
 ## Known Bugs
 
