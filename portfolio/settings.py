@@ -19,12 +19,13 @@ SECRET_KEY = '0$6%v$_7rcdu=18!bxguystup7@08ou96lt6^1n%ar9wgd=rr!'
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     config('ALLOWED_HOSTS'),
 ]
 
+CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] 
 
 # Application definition
 
@@ -80,16 +81,16 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'postgres'),
+        'NAME': os.environ.get('DB_NAME', 'portfolio'),
         'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', 'admin'),
         'HOST': os.environ.get('DB_HOST', 'localhost'),
         'PORT': os.environ.get('DB_PORT', '5432'),
         'TEST': {
             'NAME': 'test_<app_name>'
         },
         'USER': 'postgres',
-        'PASSWORD':'Bm19952810'
+        'PASSWORD':'admin'
     }
 }
 
