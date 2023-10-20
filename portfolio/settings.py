@@ -14,18 +14,19 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY = '0$6%v$_7rcdu=18!bxguystup7@08ou96lt6^1n%ar9wgd=rr!'
+SECRET_KEY=config('SECRET_KEY') 
 
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG', default=False, cast=bool)
+
+MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = [
     config('ALLOWED_HOSTS'),
 ]
 
-CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"] 
 
 # Application definition
 
@@ -78,21 +79,48 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.environ.get('DB_NAME', 'portfolio'),
-        'USER': os.environ.get('DB_USER', 'postgres'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', 'admin'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
-        'TEST': {
-            'NAME': 'test_<app_name>'
-        },
-        'USER': 'postgres',
-        'PASSWORD':'admin'
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': os.environ.get('DB_NAME', 'postgres'),
+#         'USER': os.environ.get('DB_USER', 'postgres'),
+#         'PASSWORD': os.environ.get('DB_PASSWORD', 'password'),
+#         'HOST': os.environ.get('DB_HOST', 'localhost'),
+#         'PORT': os.environ.get('DB_PORT', '5432'),
+#         'TEST': {
+#             'NAME': 'test_<app_name>'
+#         },
+#         'USER': 'postgres',
+#         'PASSWORD':'Bm19952810'
+#     }
+# }
+
+# DATABASES = {
+#         'default': dj_database_url.config(
+#             default='postgres://itsbrenda_muthoni:cyZ3HEVA1lsUHbc@itsbrenda-muthoni-db.flycast:5432/itsbrenda_muthoni?sslmode=disable'
+#         )
+#     }
+
+if config('MODE') == "dev":
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('DB_NAME'),
+            'USER': config('DB_USER'),
+            'PASSWORD': config('DB_PASSWORD'),
+            'HOST': config('DB_HOST'),
+            'PORT': '',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=config('DATABASE_URL')
+        )
+    }
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 
 
@@ -163,4 +191,3 @@ EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 django_heroku.settings(locals())
 
 db_from_env = dj_database_url.config(conn_max_age=500)
-
