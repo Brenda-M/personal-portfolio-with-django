@@ -14,9 +14,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = config('SECRET_KEY')
-SECRET_KEY=config('SECRET_KEY') 
+# SECRET_KEY=config('SECRET_KEY') 
 
-
+SECRET_KEY='0$6%v$_7rcdu=18!bxguystup7@08ou96lt6^1n%ar9wgd=rr'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
@@ -24,7 +24,9 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 MODE=config("MODE", default="dev")
 
 ALLOWED_HOSTS = [
-    config('ALLOWED_HOSTS'),
+    "brenda-muthoni-portfolio-64e73d572a8b.herokuapp.com", 
+    "127.0.0.1",
+    "localhost"
 ]
 
 
