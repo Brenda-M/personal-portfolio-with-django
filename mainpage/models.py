@@ -2,10 +2,12 @@ from django.db import models
 
 
 class Tag(models.Model):
-  name = models.CharField(max_length=30)
+    tag_id = models.IntegerField(primary_key=True, default=1)  # Set the default value to 1
+    name = models.CharField(max_length=30)
 
-  def __str__(self):
-    return self.name
+    def __str__(self):
+        return self.name
+
 
 
 class Project(models.Model):
