@@ -1,6 +1,6 @@
 asgiref==3.7.2
 autopep8==2.0.4
-backports.zoneinfo==0.2.1
+# backports.zoneinfo==0.2.1
 beautifulsoup4==4.12.2
 bootstrap4==0.1.0
 dj-database-url==2.1.0
