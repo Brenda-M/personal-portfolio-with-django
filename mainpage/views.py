@@ -2,7 +2,7 @@ from django.core.mail import send_mail
 from django.http import HttpResponse
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from .models import Project, Tag
+from .models import Project
 from .forms import ContactForm
 
 

@@ -1,8 +1,7 @@
 from django.db import models
 
-
 class Tag(models.Model):
-    tag_id = models.IntegerField(primary_key=True, default=1)  # Set the default value to 1
+    tag_id = models.AutoField(primary_key=True)  # Use AutoField for primary key
     name = models.CharField(max_length=30)
 
     def __str__(self):
@@ -11,6 +10,7 @@ class Tag(models.Model):
 
 
 class Project(models.Model):
+  id = models.AutoField(primary_key=True)
   title = models.CharField(max_length=50)
   description = models.CharField(max_length=250)
   project_image = models.ImageField(upload_to = 'projects/', blank=True)

@@ -14,11 +14,7 @@
         <h1>About</h1>
         <h6>Myself</h6>
       </div>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-        ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-        laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-        sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <p>I am a software developer with a background in electrical and telecommunications engineering. My passion for coding and problem-solving led me to a career in software development. With a strong foundation in engineering, I bring a unique perspective to my work, combining analytical thinking with a commitment to creating innovative and user-centric software solutions. I thrive on the ever-evolving challenges of the tech world and am dedicated to making a positive impact through my work.
       </p>
       <div class="social-media">
         <ul class="nav-list">
@@ -134,9 +130,10 @@
     </div>
     <div>
       <div class="portfolio-item">
+        {% if projects %}
         {% for project in projects %}
         <div class="card portfolio-card"data-aos="zoom-in" >
-          <img class="card-img-top portfolio-img" src="{{ project.project_image.url }}" alt="{{ project.titel }}">
+          <img class="card-img-top portfolio-img" src="{{ project.project_image.url }}" alt="{{ project.title }}">
           <div class="card-body">
             <h1 class="card-title portfolio-title">{{ project.title }}</h1>
             <p class="card-text portfolio-description">{{ project.description }}.</p>
@@ -148,6 +145,7 @@
           </div>
         </div>
         {% endfor %}
+        {% endif %}
       </div>
     </div>
   </div>
